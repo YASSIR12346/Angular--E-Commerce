@@ -1,0 +1,18 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.carousel-control-prev-icon{
+    background-image: url('assets/previous.png');
+    height:60px;
+    width:20px;
+   }
+   
+   .carousel-control-next-icon{
+    background-image: url('assets/next.png');
+    height:60px;
+    width:20px;
+   }

@@ -1,0 +1,13 @@
+<app-carousel></app-carousel>
+<mat-drawer-container [autosize]="true" class="min-h-full max-w-7xl mx-auto border-x">
+  <mat-drawer-content class="p-6">
+    <mat-grid-list gutterSize="16" [cols]="4" [rowHeight]="390">
+      <mat-grid-tile *ngFor="let ad of ads">
+        <app-advertising-box [ad]="ad" class="w-full"></app-advertising-box>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </mat-drawer-content>
+</mat-drawer-container>
+<app-product-carousel *ngIf="isLoggedIn" (addToCart)="onAddToCart($event)" [products]="predictedproducts" [title]="'Products For You'"></app-product-carousel>
+<app-product-carousel (addToCart)="onAddToCart($event)" [products]="latestproducts" [title]="'Latest Products'"></app-product-carousel>
+<app-product-carousel (addToCart)="onAddToCart($event)" [products]="discountproducts" [title]="'Highest Discounts'"></app-product-carousel>

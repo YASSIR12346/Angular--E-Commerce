@@ -1,0 +1,12 @@
+<button id="announcement-button" mat-raised-button routerLink="/make-announcement">+ Make Announcement</button><br>
+<app-announcement-filter (priceChange)="onPriceChanged($event)" (dateChange)="onDateChanged($event)"
+  (categoryChange)="onCategoryChanged($event)" (locationChange)="onLocationChanged($event)"
+  (transactionChange)="onTransactionChanged($event)" (conditionChange)="onConditionChanged($event)"
+  (columnsCountChange)="onColumnsCountChange($event)"></app-announcement-filter>
+<mat-grid-list  style="margin-top: 20px;" gutterSize="16" [cols]="cols" [rowHeight]="rowHeight">
+  <mat-grid-tile    *ngFor="let announcement of announcements ">
+    <app-announcement-box [announcement]="announcement" class="w-full" [fullWidthMode]="cols===1">
+    </app-announcement-box>
+  </mat-grid-tile>
+
+</mat-grid-list>

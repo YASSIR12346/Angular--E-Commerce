@@ -1,0 +1,105 @@
+<mat-card  class="mx-auto mt-9 w-[1200px] h-[160px]">
+    <h3 id="text"> Filter Announcements</h3>
+    <div class="one">
+        <div id="filter">
+            <button  id="btn" mat-button [matMenuTriggerFor]="Price">
+                {{ price}}
+                <mat-icon>attach_money</mat-icon>
+                <mat-icon>expand_more</mat-icon>
+            </button>
+            
+            <mat-menu #Price="matMenu">
+                <button (click)="onPriceChanged('Asc')" mat-menu-item>Asc</button>
+                <button (click)="onPriceChanged('Desc')" mat-menu-item>Desc</button>
+            </mat-menu>
+        </div>
+        <div id="filter">
+            <button  id="btn" mat-button [matMenuTriggerFor]="Location">
+                {{location}}
+                <mat-icon>location_on</mat-icon>
+                <mat-icon>expand_more</mat-icon>
+            </button>
+            
+            <mat-menu #Location="matMenu">
+                <button (click)="onLocationChanged('Safi')" mat-menu-item>Safi</button>
+                <button (click)="onLocationChanged('Casa')" mat-menu-item>Casa</button>
+                <button (click)="onLocationChanged('Tanger')"  mat-menu-item>Tanger</button>
+                <button (click)="onLocationChanged('Marrakech')" mat-menu-item>Marrakech</button>
+                <button (click)="onLocationChanged('Agadir')" mat-menu-item>Agadir</button>
+                <button (click)="onLocationChanged('Laayoun')" mat-menu-item>Laayoun</button>
+            </mat-menu>
+        </div>
+        <div id="filter">
+            <button  id="btn" mat-button [matMenuTriggerFor]="Category">
+                {{category}} 
+                <mat-icon>category</mat-icon>
+                <mat-icon>expand_more</mat-icon>
+            </button>
+            
+            <mat-menu #Category="matMenu">
+                <button (click)="onCategoryChanged('Vehicles')" mat-menu-item>Vehicles</button>
+                <button (click)="onCategoryChanged('Real Estate')" mat-menu-item>Real Estate</button>
+                <button (click)="onCategoryChanged('Software and Tech')" mat-menu-item>Software and Tech</button>
+                <button (click)="onCategoryChanged('Clothing')"  mat-menu-item>Clothing</button>
+            </mat-menu>
+        </div>
+       
+    </div>
+    <div class="two">
+        <div id="filter">
+            <button  id="btn" mat-button [matMenuTriggerFor]="Date">
+                 {{date}}
+                <mat-icon>date_range</mat-icon>
+                <mat-icon>expand_more</mat-icon>
+            </button>
+            
+            <mat-menu #Date="matMenu">
+                <button (click)="onDateChanged('Newest')" mat-menu-item>Newest</button>
+                <button (click)="onDateChanged('Oldest')" mat-menu-item>Oldest</button>
+            </mat-menu>
+        </div>
+        <div id="filter">
+            <button  id="btn" mat-button [matMenuTriggerFor]="Transaction">
+                {{transaction}}
+                <mat-icon>sell</mat-icon>
+                <mat-icon>expand_more</mat-icon>
+            </button>
+            
+            <mat-menu #Transaction="matMenu">
+                <button (click)="onTransactionChanged('Sell')"   mat-menu-item>Sell</button>
+                <button (click)="onTransactionChanged('Buy')"  mat-menu-item>Buy</button>
+            </mat-menu>
+        </div>
+        <div id="filter">
+            <button  id="btn" mat-button [matMenuTriggerFor]="Condition">
+                {{condition}}
+                <mat-icon>check</mat-icon>
+                <mat-icon>expand_more</mat-icon>
+            </button>
+            
+            <mat-menu #Condition="matMenu">
+                <button (click)="onConditionChanged('New')" mat-menu-item>New</button>
+                <button (click)="onConditionChanged('Very Good')" mat-menu-item>Very Good</button>
+                <button (click)="onConditionChanged('Good')" mat-menu-item>Good</button>
+                <button (click)="onConditionChanged('Fair')"  mat-menu-item>Fair</button>
+                <button (click)="onConditionChanged('Poor')" mat-menu-item>Poor</button>
+            </mat-menu>
+        </div>
+       
+    </div>
+
+</mat-card>
+<mat-card  class="mx-auto mt-2  w-[1200px] h-[30px]">
+    <div class="flex flex-start">
+        <button id="icon" (click)="onColumnsUpdated(1)">
+            <mat-icon>view_list</mat-icon>
+          </button>
+          <button id="icon" (click)="onColumnsUpdated(3)">
+            <mat-icon>view_module</mat-icon>
+          </button>
+          <button id="icon" (click)="onColumnsUpdated(4)">
+            <mat-icon>view_comfy</mat-icon>
+          </button>
+    </div>
+  
+</mat-card>

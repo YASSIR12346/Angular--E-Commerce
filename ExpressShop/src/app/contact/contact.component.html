@@ -1,0 +1,32 @@
+<div style="display:flex">
+    <mat-card class="w-[400px] mt-4 ml-4 h-[140px]">
+        <mat-icon id="icon">location_on</mat-icon>
+        <h1 id="info">Sidi Bouzid,Safi,Maroc </h1>
+    </mat-card>
+    <mat-card class="w-[400px] mt-4 ml-4 h-[140px]">
+        <mat-icon id="icon">email</mat-icon>
+        <h1 id="info">nasriyasser007@gmail.com</h1>
+    </mat-card>
+    <mat-card class="w-[400px] mt-4 ml-4 h-[140px]">
+        <mat-icon id="icon">phone</mat-icon>
+        <h1 id="info">+212 689-346213</h1>
+    </mat-card>
+</div>
+
+
+<div style="display:flex">
+    <mat-card class="w-[600px] mt-4 ml-4 mb-2 h-[595px]">
+        <h1 id="head">Get In Touch</h1>
+        <p id="para">Feel Free To Express An Opinion,Or Claim Any Technical Problem.</p>
+        <form #contactForm="ngForm" (ngSubmit)="Contact(contactForm)">
+            <input #usersubject="ngModel" required minlength="5" id="subject" type="text" class="form-control form-control-lg"  [(ngModel)]="subject"  name="subject"
+            placeholder="subject"  />
+            <div class="alert alert-danger" *ngIf="usersubject.errors && usersubject.dirty">Enter Valid Subject</div>
+            <textarea  #usermessage="ngModel" required minlength="10" name="message" placeholder="your message" [(ngModel)]="message" cols="30" rows="10"></textarea><br>
+            <div class="alert alert-danger" *ngIf="usermessage.errors && usermessage.dirty">Enter Valid Message</div>
+            <button [disabled]="contactForm.invalid"  id="submit" type="submit" class="btn btn-primary btn-lg"
+            style="margin-left: 10px; margin-top: 10px;">Submit</button>
+        </form>
+    </mat-card>
+    <iframe  class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2344.208755795668!2d-9.264454439323243!3d32.326726247905185!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xdac2176b55d2d85%3A0x8f039c8e14c1a1af!2sNational%20school%20of%20Applied%20sciences%20of%20Safi!5e1!3m2!1sen!2sma!4v1684322108646!5m2!1sen!2sma" allowfullscreen=""  referrerpolicy="no-referrer-when-downgrade"></iframe>
+</div>

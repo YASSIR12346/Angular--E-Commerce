@@ -1,0 +1,21 @@
+<mat-card style="margin:3px" *ngIf="announcement" [ngClass]="{ 'text-center': !fullWidthMode }">
+    <div [ngClass]="{ flex: fullWidthMode }">
+        <a [routerLink]="['/announcementpage',announcement.id]"><img id="product-image" class="mb-1 mt-1 mx-auto h-[200px]"
+            [ngClass]="{ 'h-[200px]': !fullWidthMode, 'h-[300px]': fullWidthMode,'w-[500px]':fullWidthMode }" [src]="announcement.image" /></a>
+        <div class="w-full" [ngClass]="{ 'px-8 flex flex-col justify-between': fullWidthMode }">
+            <div>
+                <h2> {{announcement.category}}</h2>
+                <a [routerLink]="['/announcementpage',announcement.id]"><p id="title" class="truncate hover:whitespace-normal">{{announcement.title}}</p></a>
+                <p style="font-size: 20px;" *ngIf="fullWidthMode">{{announcement.description}}</p>
+            </div>
+            <div class="flex justify-between">
+                <h2 class="text-red-600">{{announcement.price|currency}}</h2>
+                <p>{{announcement.date}}</p>
+                <div class="flex">
+                    <h2>{{announcement.city}}</h2>
+                    <mat-icon id="location-icon" class="text-black-500">location_on</mat-icon>
+                </div>
+            </div>
+        </div>
+    </div>
+</mat-card>

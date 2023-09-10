@@ -1,0 +1,21 @@
+<mat-card *ngIf="product" [ngClass]="{ 'text-center': !fullWidthMode }" >
+    <div [ngClass]="{ flex: fullWidthMode }">
+        <a [routerLink]="['/productpage',product.id]"><img id="product-image" class="mb-1 mt-1 mx-auto h-[200px]"  
+         [ngClass]="{ 'h-[200px]': !fullWidthMode, 'h-[330px]': fullWidthMode }"
+        [src]="product.image" /></a>
+        <div class="w-full"   [ngClass]="{ 'px-8 flex flex-col justify-between': fullWidthMode }">
+            <div>
+                <div *ngIf="product.discount" class="discount-label red"> <span>-{{product.discount}} % </span> </div>
+                <h2 > {{product.category}}</h2>
+                <a [routerLink]="['/productpage',product.id]"><p id="title" class="truncate hover:whitespace-normal">{{product.title}}</p></a>
+                <p *ngIf="fullWidthMode">{{product.description}}</p>
+            </div>
+            <div class="flex justify-between">
+                <h2 class="text-red-600">{{product.price|currency}}</h2>
+                <button id="cart"  (click)="onAddToCart()">
+                    <mat-icon id="cart-icon"  class="text-yellow-500">shopping_cart</mat-icon>
+                </button>
+            </div>
+        </div>
+    </div>
+</mat-card>

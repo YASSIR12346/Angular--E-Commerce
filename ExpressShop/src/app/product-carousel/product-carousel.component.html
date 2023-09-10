@@ -1,0 +1,30 @@
+<mat-drawer-container [autosize]="true" class="mt-4 mb-4 max-w-7xl mx-auto border-x ">
+    <h1 style="font-weight: bold;margin-left: 20px">{{title}}</h1>
+  <carousel [itemsPerSlide]="itemsPerSlide"  
+            [singleSlideOffset]="singleSlideOffset"
+            [interval]="0"
+            [noWrap]="noWrap">
+    <slide *ngFor="let product of products" style="margin-left: 20px;margin-bottom: 10px;">
+        <mat-card  *ngIf="product" class="text-center">
+            <div>
+                <div *ngIf="product.discount" class="discount-label red"> <span>-{{product.discount}} % </span> </div>
+                <h2 style="font-weight: bold; " class="mt-2">{{product.category}}</h2>
+                <a [routerLink]="['/productpage',product.id]"> <img   id="product-image" class="mb-1 mx-auto  h-[160px]"  
+                [src]="product.image"/></a>
+                <div class="w-full">
+                    <a [routerLink]="['/productpage',product.id]"> <p >{{product.title}}</p></a>
+                    <div >
+                        <div class="flex justify-between">
+                            <h2 class="text-red-600">{{product.price|currency}}</h2>
+                            <button id="cart" (click)="onAddToCart(product)" >
+                                <mat-icon id="cart-icon"  class="text-yellow-500">shopping_cart</mat-icon>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </mat-card>
+    </slide>
+  </carousel>
+  </mat-drawer-container>
+  

@@ -1,0 +1,12 @@
+<mat-card  *ngIf="ad" class="text-center">
+    <div>
+        <h2 style="font-weight: bold;" class="mt-2">{{ad.subject}}</h2>
+        <img   id="product-image" class="mb-1 mx-auto  h-[280px]"  
+        [src]="ad.image"/>
+        <div class="w-full">
+            <div >
+            <button><h2 class="text-red-600">Show more</h2></button>
+            </div>
+        </div>
+    </div>
+</mat-card>

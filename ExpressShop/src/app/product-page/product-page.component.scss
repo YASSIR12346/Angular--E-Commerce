@@ -1,0 +1,49 @@
+#card{
+    margin-top: 20px;
+    margin-left: 20px;
+    width:950px
+}
+#side-card{
+    margin-top: 20px;
+    margin-left: 20px;
+    width:220px
+}
+#product-image{
+    width: 300px;
+    height: 300px;
+}
+.discount-label {
+    padding: 4px;
+    position: relative;
+    float: left;
+    margin-right: 10px;
+}
+.discount-label span {
+    color: white;
+    font-size: 18px;
+    text-align: center;
+    font-family: "Raleway", Helvetica;
+}
+.red {
+    background-color: #E80707;
+}
+#title{
+    margin-top: 10px;
+    font-size: 30px;
+    font-family: "Raleway", Helvetica;
+}
+#description{
+    margin-top: 10px;
+    font-size: 17px;
+    font-family: "Raleway", Helvetica;
+    color: #160fdb;
+}
+#cart-button{
+    background-color: gold;
+    width:200px;
+}
+
+#buy-button{
+    background-color: #f27900;
+    width:200px;
+}

@@ -1,0 +1,44 @@
+<div style="display:flex">
+    <mat-card id="card" *ngIf="announcement">
+        <div [ngClass]="{ flex: fullWidthMode }">
+            <img id="product-image" class="mb-1 mt-1 mx-auto h-[390px] w-[400px]" [src]="announcement.image" />
+            <div class="w-full" [ngClass]="{ 'px-8 flex flex-col justify-between': fullWidthMode }">
+                <div>
+                    <h2> {{announcement.category}}</h2>
+                    <h1 id="title" class="truncate hover:whitespace-normal">{{announcement.title}}</h1>
+                    <p style="font-size: 20px;" *ngIf="fullWidthMode">{{announcement.description}}</p>
+                </div>
+                <div class="flex justify-between">
+                    <h2 class="text-red-600">{{announcement.price|currency}}</h2>
+                    <p>{{announcement.date}}</p>
+                    <div class="flex">
+                        <h2>{{announcement.city}}</h2>
+                        <mat-icon id="location-icon" class="text-black-500">location_on</mat-icon>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </mat-card>
+    <mat-card id="side-card" *ngIf="announcement">
+        <div class="w-full">
+            <div>
+                <div>
+                    <h2 style="color:black;margin-left:7px;font-size: 30px;">Announcer Data</h2>
+                </div>
+                <div class="flex">
+                    <mat-icon id="icon">mail</mat-icon>
+                    <p id="data">{{announcement.email}}</p>
+                </div>
+                <div class="flex">
+                    <mat-icon id="icon">location_on</mat-icon>
+                    <p id="data">{{announcement.adress}} ,{{announcement.city}}</p>
+                </div>
+                <div class="flex">
+                    <mat-icon id="icon">phone</mat-icon>
+                    <p id="data">{{announcement.number}}</p>
+                </div>
+            </div>
+
+        </div>
+    </mat-card>
+</div>

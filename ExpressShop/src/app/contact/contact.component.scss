@@ -1,0 +1,61 @@
+.map {
+    height: 595px;
+    width: 620px;
+    margin-top: 25px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+}
+#icon {
+    margin: auto;
+    font-size: 54px;
+    height: 50px;
+    width: 50px;
+    color: gold;
+    margin-top: 27px;
+}
+#info {
+    margin: auto;
+    font-size: 18px;
+    font-weight: bold;
+}
+#subject{
+    margin-left: 10px;
+    width: 300px;
+    border: 0.1rem solid #333;
+}
+
+textarea{
+    padding: 1.2rem 1.4rem;
+    border-radius: .5rem;
+    -webkit-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+            box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+    border: 0.1rem solid #333;
+    background: #fff;
+    text-transform: none;
+    color: #666;
+    font-size: 1.5rem;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+
+#head{
+    font-size: 25px;
+    font-weight: bold;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+#para{
+    margin-left: 10px;
+    font-size: 18px;
+
+}
+#submit{
+    background-color:gold;
+    color:black;
+    width:150px;
+}
+#submit:hover {
+    background-color: 
+    #f0bc2b;
+    color: black;
+  }

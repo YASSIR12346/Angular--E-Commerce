@@ -1,0 +1,22 @@
+<mat-card id="card" class="text-center" >
+    <div >
+        <img id="product-image" class="mb-1 mt-1 mx-auto h-[200px]"  
+        src="assets/success.png" />
+        <div class="w-full"  >
+            <div>
+                <h2 > Amount Paid  <span  style="color:red" class="font-bold not-italic ">{{
+                    getTotal() | currency
+                   }}</span></h2>
+                <p style="font-size: 17px;padding:4px;margin-top: 10px;" > you order has been saved a 
+                    confirmation email has been sent to your email address
+                </p>
+                <button id="cart-button" mat-raised-button routerLink="/product">Continue Shopping</button>
+            </div>
+            <div class="flex justify-between">
+                <h2 class="text-red-600"></h2>
+                
+            </div>
+
+        </div>
+    </div>
+</mat-card>

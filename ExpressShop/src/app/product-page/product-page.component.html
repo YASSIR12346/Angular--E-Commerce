@@ -1,0 +1,37 @@
+<div style="display:flex">
+<mat-card id="card" *ngIf="product"  >
+    <div [ngClass]="{ flex: fullWidthMode }">
+        <img id="product-image" class="mb-1 mt-1 mx-auto h-[330px]"  [src]="product.image" />
+        <div class="w-full"   [ngClass]="{ 'px-8 flex flex-col justify-between': fullWidthMode }">
+            <div>
+                <div *ngIf="product.discount" class="discount-label red"> <span>-{{product.discount}} % </span> </div>
+                <h2 > {{product.category}}</h2><br>
+                <h2 id="title" class="truncate hover:whitespace-normal">{{product.title}}</h2>
+                <h4 id="description">{{product.description}}</h4>
+            </div>
+            <div class="flex justify-between">
+                <h2 class="text-red-600">{{product.price|currency}}</h2>
+            </div>
+        </div>
+    </div>
+</mat-card>
+<mat-card id="side-card" *ngIf="product"  >
+        <div class="w-full" >
+            <div>
+                <div> <h2 style="color:green;margin-left:7px">In Stock</h2> </div>
+                <h3  style="margin-left:5px;font-weight: bold;"> Delivery in 7 Days</h3>  
+            </div>
+            <div style="display: flex; justify-content: center;align-items: center;">
+                <button (click)="onAddProductToCart()" id="cart-button" mat-raised-button >Add To Cart</button>
+            </div><br>
+            <div style="display: flex; justify-content: center;align-items: center;">
+                <button id="buy-button" mat-raised-button >Buy Now</button>
+            </div>
+            <div class="flex justify-between">
+                <h2 class="text-red-600"></h2>
+            </div>
+        </div>
+</mat-card>
+</div><br>
+<app-product-carousel  [products]="relatedproducts"
+(addToCart)="onAddToCart($event)" [title]="'Related Products'"></app-product-carousel>

@@ -1,0 +1,123 @@
+<img class=" mx-auto  h-[150px] w-[1300px]" [src]="'assets/announcementimage.jpg'" />
+<div style="display:flex">
+    <mat-card id="card">
+        <form #announcementForm="ngForm" (ngSubmit)="announce(announcementForm)">
+            <h1 id="title">Personal Data</h1>
+            <div class="form-outline mb-2 ml-2 mr-2 w-[500px]">
+                <input #useremail="ngModel" appEmailValidator required [(ngModel)]="email" type="email" id="email"
+                    class="form-control form-control-lg" name="email" placeholder="Enter a valid email" />
+                <label class="form-label" for="email">Email address</label>
+                <div class="alert alert-danger" *ngIf="useremail.errors && useremail.dirty">enter a valid email</div>
+            </div>
+            <div class="form-outline mb-2 ml-2 mr-2 w-[500px]">
+                <input #usernumber="ngModel" appNumberValidator required [(ngModel)]="number" type="text" id="number"
+                    class="form-control form-control-lg" name="number" placeholder="Enter a valid Phone Number" />
+                <label class="form-label" for="number">Phone Number</label>
+                <div class="alert alert-danger" *ngIf="usernumber.errors && usernumber.dirty">enter a valid number</div>
+            </div>
+            <div class="form-outline mb-2 ml-2 mr-2 w-[500px]">
+                <input #useradress="ngModel"  required minlength="7"[(ngModel)]="adress" type="text" id="adress"
+                    class="form-control form-control-lg" name="adress" placeholder="Enter a valid adress" />
+                <label class="form-label" for="adress">Adress</label>
+                <div class="alert alert-danger" *ngIf="useradress.errors && useradress.dirty">enter a valid adress</div>
+            </div>
+            <div class="form-outline mb-2 ml-3 mr-2 w-[400px]">
+                <mat-form-field>
+                <mat-select [(value)]="city"   required>
+                    <mat-option value="Safi">Safi</mat-option>
+                    <mat-option value="Casa">Casa</mat-option>
+                    <mat-option value="Tanger">Tanger</mat-option>
+                    <mat-option value="Marrakech">Marrakech</mat-option>
+                    <mat-option value="Agadir">Agadir</mat-option>
+                    <mat-option value="Laayoun">Laayoun</mat-option>
+                  </mat-select>
+                </mat-form-field>
+                <h3 class="form-label">Choose City</h3>
+            </div>
+
+            <h1 id="title">Announcement Data</h1>
+            <div class="form-outline mb-2 ml-2 mr-2 w-[500px]">
+                <input #price="ngModel" required [(ngModel)]="aprice" min="1" type="number" id="price"
+                    class="form-control form-control-lg" name="price"  />
+                <label class="form-label" for="price">Price</label>
+                <div class="alert alert-danger" *ngIf="price.errors && price.dirty">enter A Valid Price</div>
+            </div>
+            <div class="form-outline mb-2 ml-2 mr-2 w-[500px]">
+                <input #title="ngModel"  required minlength="7" [(ngModel)]="atitle" type="text" id="atitle"
+                    class="form-control form-control-lg" name="title" placeholder="Enter a valid title" />
+                <label class="form-label" for="atite">Tilte</label>
+                <div class="alert alert-danger" *ngIf="title.errors && title.dirty">enter a valid title</div>
+            </div>
+            <div class="form-outline mb-2 ml-2 mr-2 w-[500px]">
+                <input #description="ngModel"  required minlength="7" [(ngModel)]="adescription" type="text" id="description"
+                    class="form-control form-control-lg" name="description" placeholder="Enter a valid description" />
+                <label class="form-label" for="description">Description</label>
+                <div class="alert alert-danger" *ngIf="description.errors && description.dirty">enter a valid description</div>
+            </div>
+            <div class="form-outline mb-2 ml-3 mr-2 w-[400px]">
+                <mat-form-field>
+                <mat-select [(value)]="category"   required>
+                    <mat-option value="Vehicles">Vehicles</mat-option>
+                    <mat-option value="Real Estate">Real Estate</mat-option>
+                    <mat-option value="Software and Tech">Software and Tech</mat-option>
+                    <mat-option value="Clothing">Clothing</mat-option>
+                  </mat-select>
+                </mat-form-field>
+                <h3 class="form-label">Choose Category</h3>
+            </div>
+            <div class="form-outline mb-2 ml-3 mr-2 w-[400px]">
+                <mat-form-field>
+                <mat-select [(value)]="transaction"   required>
+                    <mat-option value="Sell">Sell</mat-option>
+                    <mat-option value="Buy">Buy</mat-option>
+                  </mat-select>
+                </mat-form-field>
+                <h3 class="form-label">Transaction</h3>
+            </div>
+            <div class="form-outline mb-2 ml-3 mr-2 w-[400px]">
+                <mat-form-field>
+                <mat-select [(value)]="condition"   required>
+                    <mat-option value="New">New</mat-option>
+                    <mat-option value="Very Good">Very Good</mat-option>
+                    <mat-option value="Good">Good</mat-option>
+                    <mat-option value="Fair">Fair</mat-option>
+                    <mat-option value="Poor">Poor</mat-option>
+                  </mat-select>
+                </mat-form-field>
+                <h3 class="form-label">Choose Condition</h3>
+            </div>
+            <div class="col-md-6">
+                <input type="file" (change)="onFileChanged($event)">
+        
+            </div>
+            <div class="container row">
+                <div class="col-md-12">
+                    <div *ngIf=message>{{message}}</div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <input type="button" (click)="getImage()" value="Get Image">
+        
+            </div>
+            <div class="container row">
+                <div class="col-md-12">
+                    <div *ngIf=retrievedImage>
+                        <img [src]="retrievedImage">
+                    </div>
+                </div>
+            </div>
+            <button [disabled]="announcementForm.invalid" id="submit" type="submit"
+                class="btn btn-primary btn-lg">Submit</button>
+        </form>
+    </mat-card>
+
+    <mat-card id="side-card" style="background-color: rgb(234, 240, 255);">
+        <div style="display:flex">
+            <mat-icon id="warning">warning</mat-icon>
+            <h3 style="margin-left: 10px;color:black;font-size: 1.4rem;">Instructions</h3>
+        </div>
+        <h4>* Choosing the right category when placing an ad can help increase visibility</h4>
+        <h4>* It's important to include an accurate address and phone number</h4>
+        <h4>* Keep your contact information up to date</h4>
+    </mat-card>
+</div>
