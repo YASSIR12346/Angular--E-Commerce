@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component, NgZone, OnDestroy, OnInit, ViewChild } from '@angular/core';
+
 import { Subscription } from 'rxjs';
 import { Ad } from '../models/ad.model';
 import { Product } from '../models/product.model';
@@ -6,6 +6,7 @@ import { CartService } from '../services/cart.service';
 import { ProductService } from '../services/product.service';
 import { HttpClient } from '@angular/common/http';
 import { LoginService } from '../services/login.service';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 
 
 @Component({

@@ -46,18 +46,15 @@ export class CartService {
   }  
    addToCart(item: CartItem): void {
     const items = [...this.cart.value.items];
-
     const itemInCart = items.find((_item) => _item.id === item.id);
     if (itemInCart) {
       itemInCart.quantity += 1;
     } else {
       items.push(item);
     }
-
     this.cart.next({ items });
     this.localStorage.setItem('cart', JSON.stringify(this.cart.value));
     this._snackBar.open('1 item added to cart.', 'Ok', { duration: 3000 });
-   
   }
 
 

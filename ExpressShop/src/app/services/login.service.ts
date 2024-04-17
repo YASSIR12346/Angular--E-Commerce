@@ -1,8 +1,8 @@
 import { HttpClient } from '@angular/common/http';
-import { Inject, Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { User } from '../models/user.model';
 import { localStorageToken } from '../localstorage.token';
+import { Inject, Injectable } from '@angular/core';
 
 @Injectable({
   providedIn: 'root'

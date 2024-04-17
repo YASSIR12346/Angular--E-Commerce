@@ -17,6 +17,7 @@ export class LoginGuard implements CanActivate, CanLoad {
       });
       return this.flag?true:this.router.navigateByUrl('/login');
   }
+  
   canLoad(
     route: Route,
     segments: UrlSegment[]): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {

@@ -19,8 +19,8 @@ export class ProductComponent implements OnInit,OnDestroy{
   productsSubscription: Subscription | undefined;
 
   constructor(private cartService :CartService,private productService:ProductService){
+}
 
-  }
   ngOnInit(): void {
     this.getProducts();
   }
